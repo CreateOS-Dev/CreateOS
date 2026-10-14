@@ -49,7 +49,7 @@ if ((CHECK_ONLY && BUILD)); then
     exit 2
 fi
 
-for required in Makefile linker.ld configs/default.config kernel/main.c boot/grub/grub.cfg; do
+for required in Makefile linker.ld .config kernel/main.c boot/grub/grub.cfg; do
     if [[ ! -e "$ROOT_DIR/$required" ]]; then
         printf 'Not a CreateOS kernel checkout; missing %s\n' "$required" >&2
         exit 1
