@@ -36,8 +36,8 @@ login prompt.
 `make menuconfig` changes the boot console, kernel log level, and GRUB menu
 timeout. These settings are saved in the local `.config` file.
 
-The [build guide](docs/kernel/build-and-run.md) has more detail about the
-toolchain, QEMU and disk images.
+The [build guide](https://github.com/CreateOS-Dev/Docs/blob/main/kernel/build-and-run.md)
+has more detail about the toolchain, QEMU and disk images.
 
 ## Get the source and assemble the project
 
@@ -86,16 +86,32 @@ without fetching.
 - [`scripts/`](scripts): build helpers and source synchronization.
 - [`build/`](build): generated files; not the source of record.
 
-New here? Start with the [system tour](docs/kernel/overview.md), then take a
-look at the [userland guide](docs/userland/userland.md) or the
-[SDK guide](docs/sdk/app-development.md).
-The [documentation index](docs/README.md) links to the kernel, userland,
-language, UIKit, Lua, and assembly guides.
+### Component repositories and documentation
 
-For the longer language manuals, start with [C programming](docs/sdk/c.md),
-[Lua](docs/sdk/lua.md), [x86-64 assembly](docs/sdk/assembly.md), and
-[CreateOS shell usage](docs/userland/shell.md). The
-[UI Kit reference](docs/sdk/uikit.md) documents the console API used by apps.
+The source is split across four repositories. The links below open the
+component repositories or the matching page in the documentation repository.
+
+| Component | Repository | Start with |
+| --- | --- | --- |
+| Kernel and boot | [CreateOS](https://github.com/CreateOS-Dev/CreateOS) | [System tour](https://github.com/CreateOS-Dev/Docs/blob/main/kernel/overview.md), [build guide](https://github.com/CreateOS-Dev/Docs/blob/main/kernel/build-and-run.md) |
+| Userland and root filesystem | [rootfs_maker](https://github.com/CreateOS-Dev/rootfs_maker) | [Userland README](rootfs_maker/README.md), [userland guide](https://github.com/CreateOS-Dev/Docs/blob/main/userland/userland.md), [shell guide](https://github.com/CreateOS-Dev/Docs/blob/main/userland/shell.md) |
+| SDK and application examples | [sdk](https://github.com/CreateOS-Dev/sdk) | [SDK README](sdk/README.md), [app development](https://github.com/CreateOS-Dev/Docs/blob/main/sdk/app-development.md), [language guides](https://github.com/CreateOS-Dev/Docs/blob/main/sdk/languages.md) |
+| Guides and references | [Docs](https://github.com/CreateOS-Dev/Docs) | [Documentation index](https://github.com/CreateOS-Dev/Docs/blob/main/README.md) |
+
+New here? Start with the
+[system tour](https://github.com/CreateOS-Dev/Docs/blob/main/kernel/overview.md),
+then take a look at the
+[userland guide](https://github.com/CreateOS-Dev/Docs/blob/main/userland/userland.md) or the
+[SDK guide](https://github.com/CreateOS-Dev/Docs/blob/main/sdk/app-development.md).
+The [documentation index](https://github.com/CreateOS-Dev/Docs/blob/main/README.md)
+links to the kernel, userland, language, UIKit, Lua, and assembly guides.
+
+For the longer language manuals, start with
+[C programming](https://github.com/CreateOS-Dev/Docs/blob/main/sdk/c.md),
+[Lua](https://github.com/CreateOS-Dev/Docs/blob/main/sdk/lua.md),
+[x86-64 assembly](https://github.com/CreateOS-Dev/Docs/blob/main/sdk/assembly.md), and
+[CreateOS shell usage](https://github.com/CreateOS-Dev/Docs/blob/main/userland/shell.md). The
+[UI Kit reference](https://github.com/CreateOS-Dev/Docs/blob/main/sdk/uikit.md) documents the console API used by apps.
 
 ## Working with the component repositories
 
@@ -117,7 +133,7 @@ uses Git to clone or fast-forward the userland, docs, and SDK into the
 locations the kernel Makefile expects. The build runs this step when needed.
 
 More on the layout and the two scripts is in the
-[repository guide](docs/repository-layout.md).
+[repository guide](https://github.com/CreateOS-Dev/Docs/blob/main/repository-layout.md).
 
 ## Make targets
 
@@ -192,7 +208,7 @@ destination. `make -C sdk clean` removes generated libraries. Individual apps ha
 Makefiles, for example `make -C rootfs_maker/root/app/lua`; that project also
 provides `luac`, `clean-luac`, and `clean` targets. Other app targets vary
 with the Makefile in each app directory. The
-[build guide](docs/kernel/build-and-run.md) and
+[build guide](https://github.com/CreateOS-Dev/Docs/blob/main/kernel/build-and-run.md) and
 [userland README](rootfs_maker/README.md) explain image handling in more detail.
 
 ## Disk images
@@ -208,6 +224,6 @@ of compressed release inputs; it is not itself a compressed bootable ISO.
 ## Getting involved
 
 Hardware coverage, filesystem recovery, test automation, and guest
-applications are all good areas to explore. The [work list](docs/TODO.md)
+applications are all good areas to explore. The [work list](https://github.com/CreateOS-Dev/Docs/blob/main/TODO.md)
 collects some open-ended ideas. Before changing a subsystem, read its guide
 and note exactly what you tested.
